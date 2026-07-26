@@ -1,0 +1,2 @@
+ALTER TABLE orders
+ADD COLUMN IF NOT EXISTS parallel_eta_set_at TIMESTAMPTZ;

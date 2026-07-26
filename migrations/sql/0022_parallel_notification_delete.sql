@@ -1,0 +1,1 @@
+-- No schema change required. VK message ids use outbox_messages.last_error.

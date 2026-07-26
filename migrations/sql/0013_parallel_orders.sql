@@ -1,0 +1,11 @@
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS parallel_driver_id INTEGER REFERENCES users(id);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS parallel_eta INTEGER;
+CREATE INDEX IF NOT EXISTS ix_orders_parallel_driver_id ON orders(parallel_driver_id);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS offered_driver_id INTEGER REFERENCES users(id);
+CREATE INDEX IF NOT EXISTS ix_orders_offered_driver_id ON orders(offered_driver_id);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS declined_driver_ids TEXT;
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS decline_reasons_json TEXT;
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS last_decline_reason VARCHAR(40);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS customer_name VARCHAR(255);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS customer_phone VARCHAR(64);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS driver_departed_at TIMESTAMPTZ;
