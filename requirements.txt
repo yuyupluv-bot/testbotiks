@@ -1,0 +1,14 @@
+# Core
+vk_api==11.9.9
+SQLAlchemy==2.0.30
+alembic==1.13.1
+psycopg2-binary==2.9.9
+python-dotenv==1.0.1
+requests==2.31.0
+
+# Web admin
+Flask==3.0.3
+Werkzeug==3.0.3
+gunicorn==22.0.0
+openpyxl==3.1.2
+pytz==2024.1
